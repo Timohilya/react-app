@@ -22,10 +22,10 @@ Main Page:
  * Search input makes search by post title.  
  * "Select category" filters posts list by category.  
  * Posts list has pagination.  
- * By click on post user goes to Post Page.  
+ * By click on post user goes to Post Page.   
 Post Page:  
  * Page has back button.  
- * By click on category you go to list of posts with that category.  
+ * By click on category you go to list of posts with that category.     
 Admin Page:  
  * Page has modals for creating categories and posts.  
  * Tables for categories and posts with delete buttons.
