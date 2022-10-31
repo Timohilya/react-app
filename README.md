@@ -18,14 +18,17 @@ Front: React, MobX, Axios, SASS, Webpack
 
 By default Every user has role ADMIN.  
 Server checks https://lifehacker.com/rss for new posts every 10 min.  
+
 Main Page:  
  * Search input makes search by post title.  
  * "Select category" filters posts list by category.  
  * Posts list has pagination.  
  * By click on post user goes to Post Page.   
+
 Post Page:  
  * Page has back button.  
  * By click on category you go to list of posts with that category.     
+
 Admin Page:  
  * Page has modals for creating categories and posts.  
  * Tables for categories and posts with delete buttons.
