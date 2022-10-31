@@ -2,6 +2,7 @@
 
 Download pgAdmin (https://www.pgadmin.org/download/)
 Create database react_app_db
+
 ![image](https://user-images.githubusercontent.com/63109870/199123581-a916fa24-7147-4bdd-9f35-eb756e6bbfb5.png)
 
 create terminal#1 and go to server folder
