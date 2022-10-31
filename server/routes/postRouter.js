@@ -4,6 +4,7 @@ const postController = require('../controllers/postController')
 const checkRole = require('../middleware/checkRoleMiddleware')
 
 router.get('/getAll', postController.getAll)
+router.get('/:id', postController.getOne)
 router.post('/create', checkRole('ADMIN'), postController.create)
 router.post('/delete', checkRole('ADMIN'), postController.delete)
 

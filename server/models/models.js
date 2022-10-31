@@ -10,10 +10,9 @@ const User = sequelize.define('user', {
 
 const Post = sequelize.define('post', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING, unique: true, allowNull: false},
-    link: {type: DataTypes.STRING, unique: true, allowNull: false},
-    img: {type: DataTypes.STRING, allowNull: false},
-    description: {type: DataTypes.STRING, allowNull: false},
+    title: {type: DataTypes.STRING(1200), unique: true, allowNull: false},
+    img: {type: DataTypes.STRING(1200), allowNull: false},
+    description: {type: DataTypes.STRING(1200), allowNull: false},
     creator: {type: DataTypes.STRING, allowNull: false},
 })
 

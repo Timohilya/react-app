@@ -13,16 +13,16 @@ class userController {
         const {email, password, role} = req.body
 
         if ( !email ) {
-            return next(ApiError.badRequest('email is not correct'))
+            return next(ApiError.badRequest('Email is not correct'))
         }
         const candidat = await User.findOne({where: {email}})
         if ( candidat ) {
-            return next(ApiError.badRequest('email already exist'))
+            return next(ApiError.badRequest('Email already exist'))
         }
 
 
         if ( !password ) {
-            return next(ApiError.badRequest('password is not correct'))
+            return next(ApiError.badRequest('Password is not correct'))
         }
 
         const hashPassword = await bcrypt.hash(password, 5)
@@ -37,19 +37,19 @@ class userController {
         const {email, password} = req.body
 
         if ( !email ) {
-            return next(ApiError.badRequest('email is not correct'))
+            return next(ApiError.badRequest('Email is not correct'))
         }
         const user = await User.findOne({where: {email}})
         if ( !user ) {
-            return next(ApiError.internal('user not found'))
+            return next(ApiError.internal('User not found'))
         }
 
         if ( !password ) {
-            return next(ApiError.badRequest('password is not correct'))
+            return next(ApiError.badRequest('Password is not correct'))
         }
         let comparePassword = bcrypt.compareSync(password, user.password)
         if ( !comparePassword ) {
-            return next(ApiError.internal('wrong password'))
+            return next(ApiError.internal('Wrong password'))
         }
         const token = generateJwt(user.id, user.email, user.role)
         return res.json({token})

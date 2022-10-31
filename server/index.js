@@ -10,6 +10,8 @@ const router        = require('./routes/index')
 const errorHandler  = require('./middleware/ErrorHandlingMiddleware')
 const path = require('path')
 
+require('./rss/index')
+
 app.use(cors())
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'static')))

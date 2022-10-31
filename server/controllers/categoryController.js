@@ -4,7 +4,7 @@ const ApiError = require('../error/apiError')
 class categoryController {
 
     async getAll ( req, res ) {
-        const categories = await Category.findAll()
+        const categories = await Category.findAll({order: [['updatedAt', 'DESC']]})
         return res.json(categories)
     }
     
@@ -13,11 +13,20 @@ class categoryController {
 
         // check name
         if ( !name ) {
-            return next(ApiError.badRequest('name is not correct'))
+            return next(ApiError.badRequest('Name is not correct'))
+        }
+
+        // check on exist
+        const nameExist = await Category.findOne({where: {name}})
+        if ( nameExist ) {
+            return next(ApiError.badRequest('Category already exist'))
         }
 
         const category = await Category.create({name})
-        return res.json(category)
+        return res.json({
+            message: 'Category created',
+            data: category,
+        })
     }
     
     async delete ( req, res, next ) {
@@ -25,7 +34,7 @@ class categoryController {
 
         // check id
         if ( !Number.isInteger(+id) || +id < 1 ) {
-            return next(ApiError.badRequest('id is not correct'))
+            return next(ApiError.badRequest('Id is not correct'))
         }
 
         // check on exist
