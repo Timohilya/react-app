@@ -1,3 +1,4 @@
+const fs = require('fs');
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const uuid = require('uuid')
@@ -88,6 +89,9 @@ class postController {
                 return next(ApiError.badRequest('Img is not correct'))
             }
             let fileName = uuid.v4() + '.jpg'
+            if (!fs.existsSync(path.resolve(__dirname, '..', 'static'))){
+                fs.mkdirSync(path.resolve(__dirname, '..', 'static'));
+            }
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
 
 
