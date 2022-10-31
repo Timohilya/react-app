@@ -1,0 +1,110 @@
+@import 'general/fonts'
+@import 'general/theme'
+@import 'general/mixin'
+
+@import 'components/header'
+@import 'components/login'
+@import 'components/posts'
+@import 'components/post-page'
+@import 'components/admin'
+@import 'components/modal'
+@import '../../node_modules/react-toastify/dist/ReactToastify'
+
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline-style: none
+
+a
+    text-decoration: none
+
+.loader
+    width: 100vw
+    height: 100vh
+    background-color: $white
+    display: flex
+    align-items: center
+    justify-content: center
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 999
+    .lds-dual-ring 
+        display: inline-block
+        width: 80px
+        height: 80px
+    .lds-dual-ring:after 
+        content: " "
+        display: block
+        width: 64px
+        height: 64px
+        margin: 8px
+        border-radius: 50%
+        border: 6px solid $black
+        border-color: $black transparent $black transparent
+        animation: lds-dual-ring 1.2s linear infinite
+    
+@keyframes lds-dual-ring 
+  0% 
+    transform: rotate(0deg)
+  100% 
+    transform: rotate(360deg)
+  
+
+
+header,
+section
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.wrapper
+    width: 100%
+    max-width: 1180px
+    padding: 0 10px
+    +max(767)
+        padding: 0 15px
+    
+.field
+    padding: 10px
+    border: 1px solid $light
+    border-radius: 4px
+    color: $black
+    font-size: 16px
+    line-height: 100%
+    font-family: $gothamRegular
+
+.btn
+    width: 200px
+    padding: 10px
+    background-color: $light
+    border: none
+    border-radius: 4px
+    color: $white
+    font-size: 16px
+    line-height: 100%
+    text-align: center
+    font-family: $gothamMedium
+    cursor: pointer
+
+.pagination
+    display: flex
+    button
+        width: 30px
+        height: 30px
+        padding: 4px
+        background-color: $white
+        border: 1px solid $light
+        border-radius: 4px
+        color: $black
+        font-size: 16px
+        line-height: 100%
+        text-align: center
+        font-family: $gothamRegular
+        cursor: pointer
+        &.active
+            background-color: $light
+            color: $white
+        &:not(:last-child)
+            margin: 0 5px 0 0

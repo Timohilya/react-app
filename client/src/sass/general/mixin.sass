@@ -1,0 +1,26 @@
+@mixin rtl($property, $ltr-value, $rtl-value)
+  #{$property}: $ltr-value
+
+  [dir=rtl] &
+    #{$property}: $rtl-value
+
+
+=max($screen)
+  @media all and (max-width: $screen+'px')
+    @content
+
+=min($screen)
+  @media all and (min-width: $screen+'px')
+    @content
+
+=maxHeight($screen)
+  @media all and (max-height: $screen+'px')
+    @content
+
+=minHeight($screen)
+  @media all and (min-height: $screen+'px')
+    @content
+
+=landscape
+  @media screen and (max-width: 900px) and (orientation:landscape)
+                                                         @content

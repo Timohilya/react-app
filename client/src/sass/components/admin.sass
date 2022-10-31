@@ -1,0 +1,105 @@
+.admin
+    margin: 40px 0
+    .wrapper
+        display: flex
+        flex-direction: column
+    &-panel
+        column-gap: 20px
+        display: flex
+        flex-wrap: wrap
+        .btn
+            width: calc(35% - 10px)
+            margin: 0 0 20px 0
+            +max(767)
+                width: 100%
+    .row
+        display: flex
+        column-gap: 20px
+        .title
+            padding: 10px
+            color: $black
+            font-size: 16px
+            line-height: 100%
+            font-family: $gothamMedium
+        .col
+            border: 1px solid $black
+            border-radius: 5px
+            &:nth-child(1)
+                width: calc(35% - 10px)
+            &:nth-child(2)
+                width: calc(65% - 10px)
+            table
+                width: 100%
+            thead tr
+                background-color: #ededed
+            tr
+                &:nth-child(even)
+                    background-color: #ededed
+            td
+                padding: 4px 10px
+                color: $black
+                font-size: 12px
+                line-height: 100%
+                font-family: $gothamRegular
+            button
+                width: 28px
+                height: 28px
+                border: none
+                cursor: pointer
+                position: relative
+                &::after
+                    content: ''
+                    width: calc(100% - 8px)
+                    height: calc(100% - 8px)
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size: contain
+                    position: absolute
+                    top: 4px
+                    left: 4px
+            .edit
+                margin: 0 10px 0 0
+                //background-color: #f3ff85
+                background-color: #a4a4a4
+                pointer-events: none
+                cursor: default
+                &::after
+                    background-image: url('../assets/icons/pencil.svg')
+            .delete
+                background-color: #ff8181
+                &::after
+                    background-image: url('../assets/icons/delete.svg')
+        .admin-categories
+            max-height: 800px
+            overflow-y: auto
+            td
+                &:nth-child(1)
+                    width: 40px
+                &:nth-child(2)
+                    width: calc(100% - 136px)
+                    word-break: break-all
+                &:nth-child(3)
+                    width: 86px
+        .admin-posts
+            display: flex
+            flex-direction: column
+            td
+                &:nth-child(1)
+                    width: 40px
+                &:nth-child(2)
+                    width: 150px
+                &:nth-child(3)
+                    width: 150px
+                &:nth-child(4)
+                    width: 100%
+                    display: flex
+                    flex-wrap: wrap
+                    p
+                        margin: 0 5px 2px 0
+                        padding: 2px 5px
+                        border: 1px solid $light
+                        border-radius: 5px
+                &:nth-child(5)
+                    width: 86px
+            .pagination
+                margin: 20px
