@@ -12,6 +12,7 @@ const NavBar = observer(() => {
         user.setUser({})
         user.setIsAuth(false)
         localStorage.setItem('token', '')
+        navigate(POSTS_ROUTE)
     }
 
     return (

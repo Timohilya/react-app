@@ -4,7 +4,7 @@ import {Context} from "../main"
 import {ToastContainer, toast} from 'react-toastify';
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {login, registration} from '../http/userAPI';
-import {LOGIN_ROUTE, REGISTRATION_ROUTE, POST_ROUTE, POSTS_ROUTE} from '../utils/consts';
+import {LOGIN_ROUTE, REGISTRATION_ROUTE, ADMIN_ROUTE} from '../utils/consts';
 
 const Auth = observer(() => {
     const {user} = useContext(Context)
@@ -23,9 +23,9 @@ const Auth = observer(() => {
             } else {
                 data = await registration(email, password)
             }
-            user.setUser(user)
+            user.setUser(data)
             user.setIsAuth(true)
-            navigate(POSTS_ROUTE)
+            navigate(ADMIN_ROUTE)
         } catch (e) {
             toast(e.response.data.message, {
                 type: 'error'
