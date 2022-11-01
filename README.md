@@ -34,6 +34,6 @@ Admin Page:
  * Tables for categories and posts with delete buttons.
 
 Screenshots:
-![image](https://user-images.githubusercontent.com/63109870/199131274-9e7f3da4-1b4a-4309-9377-168fd358c131.png)
+![image](https://user-images.githubusercontent.com/63109870/199132559-70eb2fa7-810c-4678-a522-53aed0319b14.png)
 ![image](https://user-images.githubusercontent.com/63109870/199131342-1baa5457-67c0-4ce8-81f1-7049443873d6.png)
 
