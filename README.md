@@ -32,7 +32,8 @@ Post Page:
 
 Admin Page:  
  * Page has modals for creating categories and posts.  
- * Tables for categories and posts with delete buttons.
+ * Tables for categories and posts with delete buttons.  
+ * Posts table has pagination.  
 
 Screenshots:
 ![image](https://user-images.githubusercontent.com/63109870/199132559-70eb2fa7-810c-4678-a522-53aed0319b14.png)
