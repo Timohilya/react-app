@@ -27,7 +27,7 @@ Main Page:
 
 Post Page:  
  * Page has back button.  
- * By click on category you go to list of posts with that category.  
+ * By click on category user goes to list of posts with that category.  
  * Post full info.     
 
 Admin Page:  
