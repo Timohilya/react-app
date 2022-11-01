@@ -12,11 +12,6 @@ const Posts = observer(() => {
         fetchCategories().then(data => {
             post.setCategories(data)
         })
-        post.setLimit(6)
-        fetchPosts(null, null, post.page, post.limit).then(data => {
-            post.setPosts(data.rows)
-            post.setTotalCount(data.count)
-        })
     }, [])
 
     useEffect(() => {

@@ -4,7 +4,6 @@ import {Context} from '../main'
 
 const NavBar = observer(() => {
     const {post} = useContext(Context)
-    const [titleWord, setTitleWord] = useState('')
 
     useEffect(() => {
         document.querySelector('.sidebar__category.active').scrollIntoView()
@@ -12,7 +11,6 @@ const NavBar = observer(() => {
     }, [])
 
     const searchHandler = e => {
-        setTitleWord(e.target.value)
         post.setTitleWord(e.target.value)
     }
 
@@ -20,7 +18,7 @@ const NavBar = observer(() => {
         <div className="sidebar">
             <div className="sidebar-search">
                 <form>
-                    <input type="text" className="field" placeholder="Search..." value={titleWord} onChange={e => searchHandler(e)}/>
+                    <input type="text" className="field" placeholder="Search..." value={post.titleWord} onChange={e => searchHandler(e)}/>
                     <input type="button" className='btn' value="Send"/>
                 </form>
             </div>
